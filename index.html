@@ -9,18 +9,26 @@
     :root {
       --bg: #fdfcfe;
       --primary: #6366f1;
-      --day1: #0ea5e9;    /* 深天藍 */
-      --day2: #8b5cf6;    /* 靛紫色 */
-      --day3: #f59e0b;    /* 琥珀色 */
-      --food: #ec4899;    /* 亮粉色 */
-      --bag: #ff7e5f;     /* 珊瑚橘 */
-      --gallery: #06b6d4; /* 湖水綠 */
+      --day1: #0ea5e9;
+      /* 深天藍 */
+      --day2: #8b5cf6;
+      /* 靛紫色 */
+      --day3: #f59e0b;
+      /* 琥珀色 */
+      --food: #ec4899;
+      /* 亮粉色 */
+      --bag: #ff7e5f;
+      /* 珊瑚橘 */
+      --gallery: #06b6d4;
+      /* 湖水綠 */
       --text: #1e293b;
       --muted: #64748b;
       --radius: 28px;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
@@ -32,7 +40,11 @@
       line-height: 1.6;
     }
 
-    .wrap { max-width: 900px; margin: 0 auto; padding: 20px; }
+    .wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
 
     /* --- 童趣 Header --- */
     header {
@@ -48,18 +60,35 @@
     }
 
     header::before {
-      content: "☁️"; position: absolute; top: 15px; left: 20px; font-size: 28px; opacity: 0.7;
+      content: "☁️";
+      position: absolute;
+      top: 15px;
+      left: 20px;
+      font-size: 28px;
+      opacity: 0.7;
       animation: float 3s ease-in-out infinite;
     }
 
     header::after {
-      content: "☁️"; position: absolute; bottom: 15px; right: 20px; font-size: 28px; opacity: 0.7;
+      content: "☁️";
+      position: absolute;
+      bottom: 15px;
+      right: 20px;
+      font-size: 28px;
+      opacity: 0.7;
       animation: float 4s ease-in-out infinite;
     }
-    
+
     @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
     }
 
     header h1 {
@@ -70,7 +99,7 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       font-weight: 900;
-      filter: drop-shadow(3px 3px 0px rgba(255,255,255,0.8));
+      filter: drop-shadow(3px 3px 0px rgba(255, 255, 255, 0.8));
     }
 
     header p {
@@ -93,7 +122,11 @@
       margin-bottom: 22px;
     }
 
-    @media (min-width: 600px) { .tabs { grid-template-columns: repeat(6, 1fr); } }
+    @media (min-width: 600px) {
+      .tabs {
+        grid-template-columns: repeat(6, 1fr);
+      }
+    }
 
     .tab {
       background: #fff;
@@ -106,19 +139,50 @@
       color: #64748b;
       font-size: 13px;
       transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      box-shadow: 0 6px 15px -5px rgba(0,0,0,0.05);
+      box-shadow: 0 6px 15px -5px rgba(0, 0, 0, 0.05);
       user-select: none;
     }
 
-    .tab:hover { transform: translateY(-3px); border-color: #cbd5e1; }
+    .tab:hover {
+      transform: translateY(-3px);
+      border-color: #cbd5e1;
+    }
 
-    .tab.active { transform: scale(1.05); color: #fff !important; border-color: #fff !important; }
-    .tab.active[data-tab="day1"] { background: var(--day1); box-shadow: 0 10px 20px -5px rgba(14, 165, 233, 0.4); }
-    .tab.active[data-tab="day2"] { background: var(--day2); box-shadow: 0 10px 20px -5px rgba(139, 92, 246, 0.4); }
-    .tab.active[data-tab="day3"] { background: var(--day3); box-shadow: 0 10px 20px -5px rgba(245, 158, 11, 0.4); }
-    .tab.active[data-tab="food"] { background: var(--food); box-shadow: 0 10px 20px -5px rgba(236, 72, 153, 0.4); }
-    .tab.active[data-tab="bag"] { background: var(--bag); box-shadow: 0 10px 20px -5px rgba(255, 126, 95, 0.4); }
-    .tab.active[data-tab="gallery"] { background: var(--gallery); box-shadow: 0 10px 20px -5px rgba(6, 182, 212, 0.4); }
+    .tab.active {
+      transform: scale(1.05);
+      color: #fff !important;
+      border-color: #fff !important;
+    }
+
+    .tab.active[data-tab="day1"] {
+      background: var(--day1);
+      box-shadow: 0 10px 20px -5px rgba(14, 165, 233, 0.4);
+    }
+
+    .tab.active[data-tab="day2"] {
+      background: var(--day2);
+      box-shadow: 0 10px 20px -5px rgba(139, 92, 246, 0.4);
+    }
+
+    .tab.active[data-tab="day3"] {
+      background: var(--day3);
+      box-shadow: 0 10px 20px -5px rgba(245, 158, 11, 0.4);
+    }
+
+    .tab.active[data-tab="food"] {
+      background: var(--food);
+      box-shadow: 0 10px 20px -5px rgba(236, 72, 153, 0.4);
+    }
+
+    .tab.active[data-tab="bag"] {
+      background: var(--bag);
+      box-shadow: 0 10px 20px -5px rgba(255, 126, 95, 0.4);
+    }
+
+    .tab.active[data-tab="gallery"] {
+      background: var(--gallery);
+      box-shadow: 0 10px 20px -5px rgba(6, 182, 212, 0.4);
+    }
 
     /* Card */
     .card {
@@ -130,9 +194,22 @@
       border: 2px solid #fff;
     }
 
-    .card.active { display: block; animation: slideIn 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+    .card.active {
+      display: block;
+      animation: slideIn 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
 
-    @keyframes slideIn { from { opacity: 0; transform: translateY(20px) scale(0.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.98);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
 
     .card-hd {
       padding: 18px;
@@ -141,20 +218,48 @@
       text-align: center;
       font-size: 19px;
       letter-spacing: 1px;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
-    .bg-day1 { background: linear-gradient(90deg, #0ea5e9, #38bdf8); }
-    .bg-day2 { background: linear-gradient(90deg, #8b5cf6, #a78bfa); }
-    .bg-day3 { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
-    .bg-food { background: linear-gradient(90deg, #ec4899, #f472b6); }
-    .bg-bag { background: linear-gradient(90deg, #ff7e5f, #feb47b); }
-    .bg-gallery { background: linear-gradient(90deg, #06b6d4, #22d3ee); }
+    .bg-day1 {
+      background: linear-gradient(90deg, #0ea5e9, #38bdf8);
+    }
 
-    table { width: 100%; border-collapse: collapse; }
-    td { padding: 16px 18px; border-bottom: 2px solid #f8fafc; vertical-align: top; }
-    tr:last-child td { border-bottom: none; }
-    
+    .bg-day2 {
+      background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+    }
+
+    .bg-day3 {
+      background: linear-gradient(90deg, #f59e0b, #fbbf24);
+    }
+
+    .bg-food {
+      background: linear-gradient(90deg, #ec4899, #f472b6);
+    }
+
+    .bg-bag {
+      background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    }
+
+    .bg-gallery {
+      background: linear-gradient(90deg, #06b6d4, #22d3ee);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    td {
+      padding: 16px 18px;
+      border-bottom: 2px solid #f8fafc;
+      vertical-align: top;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
     .time {
       font-weight: 900;
       color: var(--primary);
@@ -166,8 +271,16 @@
       border-right: 2px dashed #f1f5f9;
     }
 
-    .hl { color: #f43f5e; font-weight: 900; }
-    .note { color: var(--muted); font-size: 13px; line-height: 1.5; }
+    .hl {
+      color: #f43f5e;
+      font-weight: 900;
+    }
+
+    .note {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
 
     .pill {
       display: inline-block;
@@ -179,16 +292,37 @@
       background: #f1f5f9;
       color: #475569;
       margin-top: 6px;
-      border: 1px solid rgba(0,0,0,0.03);
+      border: 1px solid rgba(0, 0, 0, 0.03);
     }
 
-    .pill.purple { background: #f5f3ff; color: #6d28d9; }
-    .pill.blue { background: #eff6ff; color: #1d4ed8; }
-    .pill.pink { background: #fff1f2; color: #be123c; }
-    .pill.orange { background: #fff7ed; color: #c2410c; }
-    .pill.green { background: #ecfdf5; color: #047857; }
+    .pill.purple {
+      background: #f5f3ff;
+      color: #6d28d9;
+    }
 
-    .food-item, .bag-item, .img-card {
+    .pill.blue {
+      background: #eff6ff;
+      color: #1d4ed8;
+    }
+
+    .pill.pink {
+      background: #fff1f2;
+      color: #be123c;
+    }
+
+    .pill.orange {
+      background: #fff7ed;
+      color: #c2410c;
+    }
+
+    .pill.green {
+      background: #ecfdf5;
+      color: #047857;
+    }
+
+    .food-item,
+    .bag-item,
+    .img-card {
       display: flex;
       align-items: flex-start;
       gap: 15px;
@@ -196,11 +330,28 @@
       border-bottom: 2px dashed #f1f5f9;
     }
 
-    .food-icon, .bag-icon { font-size: 26px; line-height: 1; margin-top: 2px; }
+    .food-icon,
+    .bag-icon {
+      font-size: 26px;
+      line-height: 1;
+      margin-top: 2px;
+    }
 
-    .food-info b, .bag-info b, .img-info b { display: block; font-size: 16px; color: var(--text); }
-    .bag-info b { color: var(--bag); }
-    .img-info b { color: var(--gallery); }
+    .food-info b,
+    .bag-info b,
+    .img-info b {
+      display: block;
+      font-size: 16px;
+      color: var(--text);
+    }
+
+    .bag-info b {
+      color: var(--bag);
+    }
+
+    .img-info b {
+      color: var(--gallery);
+    }
 
     .img-box {
       width: 100%;
@@ -227,9 +378,14 @@
       margin-top: 20px;
     }
 
-    @media (min-width: 600px) { .btn-row { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 600px) {
+      .btn-row {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
 
-    .btn-copy, .btn-print {
+    .btn-copy,
+    .btn-print {
       border: none;
       padding: 16px;
       border-radius: 18px;
@@ -238,29 +394,69 @@
       cursor: pointer;
       transition: all 0.2s;
       font-size: 15px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
-    .btn-copy { background: #1e293b; color: white; }
-    .btn-copy:hover { background: #334155; transform: scale(1.02); }
+    .btn-copy {
+      background: #1e293b;
+      color: white;
+    }
 
-    .btn-print { background: #ffffff; color: #1e293b; border: 3px solid #f1f5f9; }
-    .btn-print:hover { background: #f8fafc; transform: scale(1.02); }
+    .btn-copy:hover {
+      background: #334155;
+      transform: scale(1.02);
+    }
+
+    .btn-print {
+      background: #ffffff;
+      color: #1e293b;
+      border: 3px solid #f1f5f9;
+    }
+
+    .btn-print:hover {
+      background: #f8fafc;
+      transform: scale(1.02);
+    }
 
     .toast {
-      position: fixed; left: 50%; bottom: 25px; transform: translateX(-50%);
-      background: #0f172a; color: #fff; padding: 12px 24px;
-      border-radius: 50px; font-weight: 900; opacity: 0;
+      position: fixed;
+      left: 50%;
+      bottom: 25px;
+      transform: translateX(-50%);
+      background: #0f172a;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-weight: 900;
+      opacity: 0;
       transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-      pointer-events: none; z-index: 9999;
+      pointer-events: none;
+      z-index: 9999;
     }
 
-    .toast.show { opacity: 1; transform: translateX(-50%) translateY(-10px); }
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(-10px);
+    }
 
     @media print {
-      .tabs, .btn-row, .toast { display: none !important; }
-      .card { display: block !important; margin-bottom: 25px; box-shadow: none; border: 1px solid #eee; }
-      body { background: white; }
+
+      .tabs,
+      .btn-row,
+      .toast {
+        display: none !important;
+      }
+
+      .card {
+        display: block !important;
+        margin-bottom: 25px;
+        box-shadow: none;
+        border: 1px solid #eee;
+      }
+
+      body {
+        background: white;
+      }
     }
   </style>
 </head>
@@ -270,20 +466,23 @@
   <div class="wrap">
     <header>
       <h1>澳門三天兩夜 ✈️</h1>
-      <p>🌈 2026/03/29 – 03/31 ｜ 住宿：葡京人酒店</p>
+      <div class="header-info">
+        <p><span>📅</span> 2026/03/29 – 03/31</p>
+        <p><span>🏨</span> 住宿：葡京人酒店</p>
+      </div>
     </header>
 
     <nav class="tabs" aria-label="分頁導覽">
-      <div class="tab active" data-tab="day1">Day 1</div>
-      <div class="tab" data-tab="day2">Day 2</div>
-      <div class="tab" data-tab="day3">Day 3</div>
-      <div class="tab" data-tab="food">必吃必買</div>
-      <div class="tab" data-tab="bag">行李清單</div>
-      <div class="tab" data-tab="gallery">📸 圖集</div>
+      <div class="tab active" data-tab="day1"><span>☀️</span><br>Day 1</div>
+      <div class="tab" data-tab="day2"><span>🎡</span><br>Day 2</div>
+      <div class="tab" data-tab="day3"><span>✈️</span><br>Day 3</div>
+      <div class="tab" data-tab="food"><span>🍦</span><br>必吃必買</div>
+      <div class="tab" data-tab="bag"><span>🎒</span><br>行李清單</div>
+      <div class="tab" data-tab="gallery"><span>📸</span><br>備忘記錄</div>
     </nav>
 
     <div class="card active" id="day1">
-      <div class="card-hd bg-day1">Day 1：團體經典澳門歷史城區巡禮</div>
+      <div class="card-hd bg-day1">Day 1：團體-澳門歷史城區巡禮</div>
       <table>
         <tr>
           <td class="time">早餐</td>
@@ -389,7 +588,7 @@
           <td>
             <b>🍽 午餐：葡京人 / Grand Lisboa Palace 商場</b><br>
             <span class="pill green">最順路</span><span class="pill">推車友善</span>
-            <div class="note">輕軌至「路氹西站」下車，步行 5–8 分即可用餐。<br>吃完直接回飯店午休，避免跑遠。</div>
+            <div class="note">輕軌至「路氹西站」，步行 5–8 分即可用餐。<br>吃完直接回飯店午休。</div>
           </td>
         </tr>
         <tr>
@@ -413,7 +612,7 @@
           <td>
             <b>🐝 BEEBEELAND 蜂狂天地（室內親子樂園）</b><br>
             <span class="pill blue">室內放電</span><span class="pill green">親子友善</span>
-            <div class="note">位於路氹區，室內大型親子遊樂空間，適合 4 歲雙胞胎放電。<br>設有攀爬區、球池、滑梯與親子互動區，大約停留 60–90 分鐘即可。</div>
+            <div class="note">位於葡京人酒店，設有攀爬區、球池、滑梯與親子互動區，大約停留 60–90 分鐘即可。</div>
           </td>
         </tr>
         <tr>
@@ -427,7 +626,7 @@
         <tr>
           <td class="time">19:15</td>
           <td>
-            <b>✨  </b><br>                         
+            <b>✨ 倫敦人光效匯演 </b><br>
             <span class="pill blue">拍照亮點</span>
             <div class="note">外牆燈光華麗，不必等整點表演。</div>
           </td>
@@ -444,7 +643,7 @@
     </div>
 
     <div class="card" id="day3">
-      <div class="card-hd bg-day3">Day 3：路環海岸風光＋返程</div>
+      <div class="card-hd bg-day3">Day 3：團體-路環海岸風光＋返程</div>
       <table>
         <tr>
           <td class="time">早餐</td>
@@ -460,7 +659,8 @@
         </tr>
         <tr>
           <td class="time">中午</td>
-          <td><b>🍽 陳勝記餐廳 HKD 160 / 人</b><br><span class="pill purple">人氣餐廳</span><span class="note">團體用餐時間可能較長，孩子可準備小玩具。</span></td>
+          <td><b>🍽 陳勝記餐廳 HKD 160 / 人</b><br><span class="pill purple">人氣餐廳</span><span
+              class="note">團體用餐時間可能較長，孩子可準備小玩具。</span></td>
         </tr>
         <tr>
           <td class="time">下午</td>
@@ -522,25 +722,47 @@
     <div class="card" id="bag">
       <div class="card-hd bg-bag">🎒 行李清單（家庭客製版）</div>
       <div style="padding: 10px;">
-        <div class="bag-item"><div class="bag-icon">📄</div><div class="bag-info"><b>證件/文件（務必先拍照備份）</b><span>護照、通行證/台胞證、機票/團體資料、住宿資訊、保險資料。</span></div></div>
-        <div class="bag-item"><div class="bag-icon">👧👦</div><div class="bag-info"><b>雙胞胎用品</b><span>推車（強烈建議）、薄外套（商場冷氣強）、替換衣物、濕紙巾、小零食、小玩具。</span></div></div>
-        <div class="bag-item"><div class="bag-icon">👂</div><div class="bag-info"><b>子逸（聽覺/耳朵相關）</b><span>助聽器/配件、備用電池、防水收納盒、簡易清潔用品。避免高噪音久待。</span></div></div>
-        <div class="bag-item"><div class="bag-icon">🧘‍♀️</div><div class="bag-info"><b>媽媽（第二型糖尿病）</b><span>藥物、血糖機、低血糖備用糖、補水用品；行程記得「不要空腹」＋「不要一次吃太甜」。</span></div></div>
-        <div class="bag-item"><div class="bag-icon">🔌</div><div class="bag-info"><b>電器/充電</b><span>萬用轉接頭、行動電源、充電線（手機/平板/相機）。</span></div></div>
-        <div class="bag-item"><div class="bag-icon">💊</div><div class="bag-info"><b>常備藥/小物</b><span>退燒藥、OK繃、腸胃藥、防曬、防蚊、口罩（人潮多備用）。</span></div></div>
-        <div class="bag-item"><div class="bag-icon">💰</div><div class="bag-info"><b>金流</b><span>少量現金（小吃/零星）、信用卡；收據集中放一個夾鏈袋，回來好記帳。</span></div></div>
+        <div class="bag-item">
+          <div class="bag-icon">📄</div>
+          <div class="bag-info"><b>證件/文件（務必先拍照備份）</b><span>護照、通行證/台胞證、機票/團體資料、住宿資訊、保險資料。</span></div>
+        </div>
+        <div class="bag-item">
+          <div class="bag-icon">👧👦</div>
+          <div class="bag-info"><b>雙胞胎用品</b><span>推車（強烈建議）、薄外套（商場冷氣強）、替換衣物、濕紙巾、小零食、小玩具。</span></div>
+        </div>
+        <div class="bag-item">
+          <div class="bag-icon">👂</div>
+          <div class="bag-info"><b>子逸（聽覺/耳朵相關）</b><span>助聽器/配件、備用電池、防水收納盒、簡易清潔用品。避免高噪音久待。</span></div>
+        </div>
+        <div class="bag-item">
+          <div class="bag-icon">🧘‍♀️</div>
+          <div class="bag-info"><b>媽媽（第二型糖尿病）</b><span>藥物、血糖機、低血糖備用糖、補水用品；行程記得「不要空腹」＋「不要一次吃太甜」。</span></div>
+        </div>
+        <div class="bag-item">
+          <div class="bag-icon">🔌</div>
+          <div class="bag-info"><b>電器/充電</b><span>萬用轉接頭、行動電源、充電線（手機/平板/相機）。</span></div>
+        </div>
+        <div class="bag-item">
+          <div class="bag-icon">💊</div>
+          <div class="bag-info"><b>常備藥/小物</b><span>退燒藥、OK繃、腸胃藥、防曬、防蚊、口罩（人潮多備用）。</span></div>
+        </div>
+        <div class="bag-item">
+          <div class="bag-icon">💰</div>
+          <div class="bag-info"><b>金流</b><span>少量現金（小吃/零星）、信用卡；收據集中放一個夾鏈袋，回來好記帳。</span></div>
+        </div>
       </div>
     </div>
 
     <div class="card" id="gallery">
-      <div class="card-hd bg-gallery">📸 圖集 / 備忘（可當手冊附錄）</div>
+      <div class="card-hd bg-gallery">📸 備忘</div>
       <div style="padding: 10px;">
         <div class="img-card">
           <div style="min-width: 26px;">🚋</div>
           <div class="img-info" style="width:100%;">
             <b>澳門輕軌備忘</b>
             <span>Day2：石排灣 → 媽閣（跨海景）｜右側靠窗最好看｜到媽閣不下車、原車坐回最省力。</span>
-            <div class="img-box" style="background-image: url('https://www.mlm.com.mo/img/service/route_map.png');"><span>（輕軌路線圖參考）</span></div>
+            <div class="img-box" style="background-image: url('https://www.mlm.com.mo/img/service/route_map.png');">
+              <span>（輕軌路線圖參考）</span></div>
           </div>
         </div>
         <div class="img-card">
