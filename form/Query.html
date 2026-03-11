@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <title>品味玩家-商品需求查詢</title>
+    <link href="https://fonts.googleapis.com/earlyaccess/notosanstc.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.6/dist/lumen/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        body {
+            background-color: #f8fafc;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+
+        .query-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            padding: 30px;
+            border: none;
+        }
+
+        .form-control-custom {
+            background-color: #f1f5f9 !important;
+            border: 1px solid #e2e8f0 !important;
+            padding: 12px;
+            border-radius: 10px;
+        }
+
+        .form-control-custom:focus {
+            background-color: #fff !important;
+            border-color: #4790cf !important;
+            box-shadow: 0 0 0 3px rgba(71, 144, 207, 0.2);
+        }
+
+        .empty-state {
+            padding: 40px 20px;
+            background: #fff3cd;
+            border-radius: 10px;
+            border: 1px solid #ffeeba;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="text-center">
+        <div class="container">
+            <div class="mt-3 mb-3">
+                <a href="https://www.justtour.com.tw/events/form/">
+                    <img src="assets/justtourlogo.png" width="120" alt="品味玩家 LOGO">
+                </a>
+            </div>
+            <h2 class="fw-bold mb-2">商品需求訂單查詢</h2>
+            
+        <div class="text-center mt-3 mb-3">
+            <h6 class="text-secondary fw-bold">若有任何訂單問題，請洽品味玩家</h6>
+            <div class="d-flex justify-content-center align-items-center gap-3 mt-2">
+                <a href="tel:073862488" class="btn btn-sm btn-outline-secondary rounded-pill px-3">
+                    <i class="bi bi-telephone-fill me-1"></i>07-386-2488
+                </a>
+                <a href="https://lin.ee/kYVHlqd" target="_blank" class="d-inline-block">
+                    <img src="assets/line@.png" alt="加入 LINE 客服" style="height:32px;">
+                </a>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="container pb-5">
+        <div class="row justify-content-center">
+            <div class="col-sm-10 col-md-8 col-lg-6">
+                <div class="query-card">
+                    <div class="mb-3">
+                        <label class="form-label small fw-bold text-muted"></label>
+                        <input id="name" class="form-control text-center form-control-custom" placeholder="請輸入您登記的姓名">
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label small fw-bold text-muted"></label>
+                        <input id="phone" class="form-control text-center form-control-custom" placeholder="請輸入您登記的電話">
+                    </div>
+
+                    <div class="d-grid gap-3 d-sm-flex justify-content-sm-center mb-2">
+                        <button id="send" class="btn btn-primary btn-lg px-5 shadow-sm">
+                            <i class="bi bi-search me-2"></i>送出查詢
+                        </button>
+                    </div>
+                    <div class="text-center mt-3">
+                        <a href="index.html" class="text-decoration-none text-secondary small">
+                            <i class="bi bi-arrow-left me-1"></i>返回填寫商品需求表
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row justify-content-center mt-5">
+            <div class="col-lg-10">
+                <div class="table-responsive shadow-sm">
+                    <table border="0" class="table table-striped table-results mb-0" style="display:none;">
+                        <thead>
+                            <tr>
+                                <th class="text-center text-nowrap py-3">訂單時間</th>
+                                <th class="text-left py-3">票券詳情</th>
+                                <th class="text-center py-3">總額</th>
+                                <th class="text-center py-3">狀態</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dataView" class="align-middle"></tbody>
+                    </table>
+                </div>
+
+                <div id="emptyState" class="empty-state d-none text-center">
+                    <div class="mb-2"><i class="bi bi-exclamation-circle-fill text-warning fs-1"></i></div>
+                    <h5 class="fw-bold text-dark">查無符合紀錄</h5>
+                    <p class="mb-0 text-muted">
+                        您輸入的姓名或電話可能有誤，請重新核對後再次查詢。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="js/Query.js"></script>
+</body>
+
+</html>

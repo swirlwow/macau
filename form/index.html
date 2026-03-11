@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta name="description"
+        content="品味玩家成立以來，一直秉持「方便使用，多樣選擇，精挑細選」的理念，服務每一位員工，多年來建立的優良口碑。品味玩家，13年來，專業的態度和資深實力，備受各界的好評，使中南部各大企業，一提到企業員工福利，就想到「品味玩家」；傲眼的成績，也使品味玩家成為兩岸三地大企業出差，培訓，提供給台幹，陸幹的福利選擇。">
+    <meta name="keywords" content="華倫旅行社,團體旅遊,公司員工旅遊規畫,特約飯店住宿訂房">
+    <meta name="author" content="justtour">
+    <title>品味玩家｜線上需求表</title>
+
+ <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/earlyaccess/notosanstc.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.6/dist/lumen/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <link rel="preload" href="assets/style.css" as="style">
+    <link rel="stylesheet" href="assets/style.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="assets/style.css">
+    </noscript>
+    <style>
+        /* 額外版面微調優化 */
+        body { background-color: #f4f7f9; }
+        .nav-pills .nav-link { border-radius: 8px; font-weight: bold; background: #fff; border: 1px solid #dee2e6; color: #555; margin: 0 5px; }
+        .nav-pills .nav-link.active { background-color: #4790cf; color: #fff; border-color: #4790cf; }
+        .section-title { border-left: 5px solid #4790cf; padding-left: 12px; color: #2b6aa0; margin-bottom: 1.5rem; }
+        @media (max-width: 576px) {
+
+  /* 保證一行 */
+  #myTab {
+    flex-wrap: nowrap !important;
+  }
+
+  /* 每個 tab 各佔 1/3 */
+  #myTab .nav-item {
+    flex: 1 1 0;
+  }
+
+  /* tab 本身設定 */
+  #myTab .nav-link {
+    margin: 0 !important;           /* 移除原本左右 margin */
+    white-space: nowrap !important; /* 不換行 */
+    font-size: 14px !important;     /* 手機縮字 */
+    padding: 8px 4px;               /* 縮 padding 防止爆版 */
+    text-align: center;
+    overflow: hidden;
+  }
+
+  /* icon 與文字間距再縮一點 */
+  #myTab .nav-link i {
+    margin-right: 4px !important;
+    font-size: 14px;
+  }
+}
+    
+    </style>
+</head>
+
+<body>
+    <a id="gotop" href="#top">TOP</a>
+
+    <!-- ===== HEADER ===== -->
+    <header id="top">
+        <div class="container text-center">
+            <a href="https://www.justtour.com.tw/events/form/">
+                <img id="siteLogo" src="assets/logo.png" alt="品味玩家 LOGO" class="img-fluid">
+            </a>
+        </div>
+    </header>
+    <main class="container-sm mb-4" id="app">
+        <!-- Tabs  -->
+        <ul class="nav nav-pills nav-justified mb-4" id="myTab" role="tablist" style="font-size:20px;">
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active py-3" id="ticket-tab" data-bs-toggle="pill" href="#ticket" role="tab"
+                    aria-controls="ticket" aria-selected="true"><i class="bi bi-ticket-perforated me-2"></i>商品需求表</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link py-3" id="local-tab" data-bs-toggle="pill" href="#local" role="tab" aria-controls="local"
+                    aria-selected="false"><i class="bi bi-geo-alt me-2"></i>國內旅遊需求表</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link py-3" id="oversea-tab" data-bs-toggle="pill" href="#oversea" role="tab"
+                    aria-controls="oversea" aria-selected="false"><i class="bi bi-airplane me-2"></i>國外旅遊需求表</a>
+            </li>
+        </ul>
+        <!-- ★★★  Tab panes  ★★★ -->
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="ticket" role="tabpanel" aria-labelledby="ticket-tab">
+                <!-- ===== 主表單 ===== -->
+                <form id="orderForm" class="card shadow-sm" novalidate target="hidden_iframe">
+                    <iframe name="hidden_iframe" style="display:none"></iframe>
+
+                    <div class="card-body">
+
+                        <!-- ===== 聯絡資訊 ===== -->
+                        <h5 class="section-title fw-bold">聯絡資訊 <span class="text-danger" style="font-size: 10px;">✱ 必填</span></h5>
+                        </h5>
+                        <div class="row g-3">
+                            <div class="col-md-12">
+                                <label for="company" class="form-label">公司名稱<span class="text-danger">✱</span></label>
+                                <input id="company" class="form-control" placeholder="請填寫公司名稱" required>
+                            </div>
+                            <div class="col-md-12">
+                                <label for="staffnum" class="form-label">職工編號<span class="text-danger">✱</span></label>
+                                <input id="staffnum" class="form-control" placeholder="請填寫職工編號" required>
+                            </div>
+                            <div class="col-md-12">
+                                <label for="name" class="form-label">聯絡姓名<span class="text-danger">✱</span></label>
+                                <input id="name" class="form-control" placeholder="請填寫聯絡姓名" required>
+                            </div>
+                            <div class="col-md-12">
+                                <label for="phone" class="form-label">聯絡電話<span class="text-danger">✱</span></label>
+                                <input id="phone" class="form-control" placeholder="請填寫聯絡電話" required>
+                            </div>
+                        </div>
+
+                        <!-- ===== 取件方式 ===== -->
+                        <h5 class="section-title fw-bold mt-5">領取方式 (擇一) <span class="text-danger" style="font-size: 10px;">✱ 必填</span></h5>
+                        <div class="inputGroup1">
+                            <input type="radio" id="optPick1" name="pickup" class="pick-opt" + value="品味玩家辦事處" checked>
+                            <label for="optPick1" class="fw-bold">自取：品味玩家辦事處(高雄市三民區民成街36號)</label>
+                        </div>
+                        <div class="inputGroup1">
+                            <input type="radio" id="optMail" class="pick-opt" name="pickup" + value="郵寄" data-name="郵寄"
+                                data-price="37">
+                            <label for="optMail" class="fw-bold">郵寄：掛號郵資 37 元，若包裹超重郵資另計</label>
+                        </div>
+                        <div class="inputGroup1">
+                            <input type="radio" id="optPick2" name="pickup" class="pick-opt" value="8/6日月光K10">
+                            <label for="optPick2" class="fw-bold">
+                                快閃店：2025/8/6(三) 14:30‑16:30 日月光 K10 Cafe 旁
+                                <!-- ★★★ 觸發按鈕：用 Data API ★★★ -->
+                                <a href="javascript:void(0)" class="text-decoration-underline text-danger"
+                                    data-bs-toggle="modal" data-bs-target="#popupGuide">快閃店服務說明</a>
+                            </label>
+                        </div>
+                        <!-- 備註 / 郵寄地址 -->
+                        <div class="mt-2">
+                            <label for="address" class="form-label">郵寄地址 / 備註</label>
+                            <input id="address" name="address" class="form-control" placeholder="若選擇郵寄，請填寫正確收件地址">
+                        </div>
+                        <input type="hidden" id="place" name="place">
+
+                        <!-- ===== 快捷連結區（加在票券表格區塊之前） ===== -->
+                        <div class="d-flex flex-wrap align-items-center gap-3 my-4">
+                            <!-- 查詢按鈕 -->
+                            <button type="button" class="btn btn-primary btn-lg" onclick="location.href='Query.html'">
+                               <i class="bi bi-search me-2"></i> 商品需求訂單查詢
+                            </button>
+
+                            <!-- LINE@ 加入按鈕 -->
+                            <a href="https://lin.ee/kYVHlqd" target="_blank" class="d-inline-block">
+                                <img src="assets/line@.png" alt="加入品味玩家 LINE@" width="137">
+                            </a>
+                        </div>
+
+                        <!-- ===== 重要提醒 ===== -->
+            <div class="alert alert-danger small lh-base" role="alert">
+  <strong>★ 提醒：票券既售出概不退換，且票券載明之面額不等同於實際售價。兌換後請立即使用，以免店家無預警歇業而影響權益。</strong><br>
+                            ★ Reminder：Tickets which customers bought cannot be exchanged or returned for
+                            refund, and the face value may differ from the sale price. Please do not hoard coupons to
+                            avoid
+                            potential loss.<br>
+                            <strong>★ 兌換票券需 3‑5 個工作天，請靜待簡訊通知領取。收到通知後請盡速前來辦事處領取，超過3個月未領取之訂單將會自動取消不另行通知。</strong><br>
+                            ★ Redeeming the tickets takes 3–5 business days. Please wait patiently for notification via SMS. After receiving the SMS notification, please come to the office to collect your tickets as soon as possible. Orders that are not collected within three months will be automatically canceled without further notice.
+                            
+                        </div>
+                        <!-- ===== 票券區塊 ===== -->
+                        <section id="ticketArea" class="mt-3"></section>
+                        <!-- ===== 桌機版：總金額（手機隱藏） ===== -->
+                        <div class="text-center py-3 bg-light rounded mt-4 d-none d-lg-block">
+                            <h4 class="mb-1">金額總計：<span id="grandTotalDesktop" class="text-danger">0</span></h4>
+
+                        </div>
+
+                        <div class="d-none d-lg-flex justify-content-center gap-3 mt-4">
+                            <button type="reset" class="btn btn-outline-secondary btn-xl">清除重選</button>
+                            <button type="submit" class="btn btn-primary btn-xl" id="btnSubmit">送出需求</button>
+                        </div>
+
+                        <!-- ★★★ 浮動總金額 + 按鈕列：手機／平板專用 ★★★ -->
+                        <div id="floatingBar" class="d-print-none flex-wrap">
+                            <div class="summary-text">
+                                <h4 class="mb-1 mb-md-0">
+                                    金額總計：<span id="grandTotal" class="text-danger">0</span>
+                                </h4>
+                            </div>
+                            <div class="action-buttons ms-md-auto">
+                                <button type="reset" class="btn btn-outline-secondary me-2">清除重選</button>
+                                <button type="submit" class="btn btn-primary" id="btnSubmitMobile">送出需求</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+
+            <!-- ================= 國內旅遊需求表 ================= -->
+            <div class="tab-pane fade" id="local" role="tabpanel" aria-labelledby="local-tab">
+                <form id="localForm" class="card shadow-sm" method="POST" target="hidden_iframe" autocomplete="on"
+                    action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdO-We5ooo-FFVKAiKSLx-_DSH8EpntnpwVyHip9vxnC_Jjhg/formResponse"
+                    onsubmit="alert('表單已送出')">
+                    <div class="card-body">
+                       <h5 class="section-title fw-bold">聯絡資訊 <span class="text-danger" style="font-size: 10px;">✱ 必填</span></h5>
+
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <label for="entry_1359119945" class="form-label">公司名稱<span
+                                        class="text-danger">✱</span></label>
+                                <input id="entry_1359119945" name="entry.1359119945" class="form-control"
+                                    placeholder="請填寫公司名稱" required>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="entry_414528845" class="form-label">廠別<span
+                                        class="text-danger">✱</span></label>
+                                <input id="entry_414528845" name="entry.414528845" class="form-control"
+                                    placeholder="請填寫廠別" required>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="entry_164905432" class="form-label">職工編號<span
+                                        class="text-danger">✱</span></label>
+                                <input id="entry_164905432" name="entry.164905432" class="form-control"
+                                    placeholder="請填寫職工編號" required>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="entry_589348690" class="form-label">聯絡姓名<span
+                                        class="text-danger">✱</span></label>
+                                <input id="entry_589348690" name="entry.589348690" class="form-control"
+                                    placeholder="請填寫聯絡姓名" required>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="entry_66193463" class="form-label">連絡電話<span
+                                        class="text-danger">✱</span></label>
+                                <input id="entry_66193463" name="entry.66193463" class="form-control"
+                                    placeholder="請填寫連絡電話" required>
+                            </div>
+                        </div>
+
+                        <h5 class="fw-bold mt-4 mb-3">需求內容</h5>
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <label for="entry_2111061404" class="form-label">旅遊城市<span
+                                        class="text-danger">✱</span></label>
+                                <textarea id="entry_2111061404" name="entry.2111061404" rows="3" class="form-control"
+                                    placeholder="請說明欲前往的城市或行程" required></textarea>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="entry_289704816" class="form-label">預計出發日期<span
+                                        class="text-danger">✱</span></label>
+                                <input type="date" id="entry_289704816" name="entry.289704816" class="form-control"
+                                    required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="entry_986999409" class="form-label">旅遊人數<span
+                                        class="text-danger">✱</span></label>
+                                <input id="entry_986999409" name="entry.986999409" class="form-control"
+                                    placeholder="例：4" required>
+                            </div>
+
+                            <div class="col-12">
+                                <label class="form-label d-block">每人旅遊預算<span class="text-danger">✱</span></label>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="group_1494405695_1"
+                                        name="entry.1494405695" value="10,000以下" required>
+                                    <label class="form-check-label" for="group_1494405695_1">10,000 以下</label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="group_1494405695_2"
+                                        name="entry.1494405695" value="10,001~20,000" required>
+                                    <label class="form-check-label" for="group_1494405695_2">10,001 ~ 20,000</label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="group_1494405695_3"
+                                        name="entry.1494405695" value="20,001~30,000" required>
+                                    <label class="form-check-label" for="group_1494405695_3">20,001 ~ 30,000</label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="group_1494405695_4"
+                                        name="entry.1494405695" value="30,001~40,000" required>
+                                    <label class="form-check-label" for="group_1494405695_4">30,001 ~ 40,000</label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="group_1494405695_5"
+                                        name="entry.1494405695" value="40,001以上" required>
+                                    <label class="form-check-label" for="group_1494405695_5">40,001 以上</label>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="entry_85944402" class="form-label">其他需求</label>
+                                <textarea id="entry_85944402" name="entry.85944402" rows="3" class="form-control"
+                                    placeholder="若有其他需求，請由此說明。"></textarea>
+                            </div>
+                        </div>
+                        <div class="text-center mt-4">
+                            <button type="reset" class="btn btn-secondary btn-xl">清除重填</button>
+                            <button type="submit" class="btn btn-primary btn-xl">送出需求</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- ================= 國外旅遊需求表 ================= -->
+            <div class="tab-pane fade" id="oversea" role="tabpanel" aria-labelledby="oversea-tab">
+                <form id="overseaForm" class="card shadow-sm" method="POST" target="hidden_iframe" autocomplete="on"
+                    action="https://docs.google.com/forms/u/2/d/e/1FAIpQLSfm227cDyZWlgavogHCZ4-QR6iF2P-6jaBO3QjbbzZSFiZKfw/formResponse"
+                    onsubmit="alert('表單已送出')">
+                    <div class="card-body">
+                <h5 class="section-title fw-bold">聯絡資訊 <span class="text-danger" style="font-size: 10px;">✱ 必填</span></h5>
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <label for="entry_462199619" class="form-label">公司名稱<span
+                                        class="text-danger">✱</span></label>
+                                <input id="entry_462199619" name="entry.462199619" class="form-control"
+                                    placeholder="請填寫公司名稱" required>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="entry_1803815609" class="form-label">廠別<span
+                                        class="text-danger">✱</span></label>
+                                <input id="entry_1803815609" name="entry.1803815609" class="form-control"
+                                    placeholder="請填寫廠別" required>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="entry_361714368" class="form-label">職工編號<span
+                                        class="text-danger">✱</span></label>
+                                <input id="entry_361714368" name="entry.361714368" class="form-control"
+                                    placeholder="請填寫職工編號" required>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="entry_84640603" class="form-label">聯絡姓名<span
+                                        class="text-danger">✱</span></label>
+                                <input id="entry_84640603" name="entry.84640603" class="form-control"
+                                    placeholder="請填寫聯絡姓名" required>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="entry_753514684" class="form-label">連絡電話<span
+                                        class="text-danger">✱</span></label>
+                                <input id="entry_753514684" name="entry.753514684" class="form-control"
+                                    placeholder="請填寫連絡電話" required>
+                            </div>
+                        </div>
+
+                        <h5 class="fw-bold mt-4 mb-3">需求內容</h5>
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <label for="entry_777038709" class="form-label">旅遊國家（可詳述）<span
+                                        class="text-danger">✱</span></label>
+                                <textarea id="entry_777038709" name="entry.777038709" rows="3" class="form-control"
+                                    placeholder="請說明欲前往的國家或行程" required></textarea>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="entry_956605210" class="form-label">預計出發日期<span
+                                        class="text-danger">✱</span></label>
+                                <input type="date" id="entry_956605210" name="entry.956605210" class="form-control"
+                                    required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="entry_687130596" class="form-label">旅遊天數<span
+                                        class="text-danger">✱</span></label>
+                                <input id="entry_687130596" name="entry.687130596" class="form-control"
+                                    placeholder="例：7" required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="entry_671952788" class="form-label">旅遊人數<span
+                                        class="text-danger">✱</span></label>
+                                <input id="entry_671952788" name="entry.671952788" class="form-control"
+                                    placeholder="例：4" required>
+                            </div>
+
+                            <div class="col-12">
+                                <label class="form-label d-block">每人旅遊預算<span class="text-danger">✱</span></label>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="group_974862970_1"
+                                        name="entry.974862970" value="20,000以下" required>
+                                    <label class="form-check-label" for="group_974862970_1">20,000 以下</label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="group_974862970_2"
+                                        name="entry.974862970" value="20,001~30,000" required>
+                                    <label class="form-check-label" for="group_974862970_2">20,001 ~ 30,000</label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="group_974862970_3"
+                                        name="entry.974862970" value="30,001~40,000" required>
+                                    <label class="form-check-label" for="group_974862970_3">30,001 ~ 40,000</label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="group_974862970_4"
+                                        name="entry.974862970" value="40,001~50,000" required>
+                                    <label class="form-check-label" for="group_974862970_4">40,001 ~ 50,000</label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="group_974862970_5"
+                                        name="entry.974862970" value="50,001以上" required>
+                                    <label class="form-check-label" for="group_974862970_5">50,001 以上</label>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="entry_1133954133" class="form-label">其他需求</label>
+                                <textarea id="entry_1133954133" name="entry.1133954133" rows="3" class="form-control"
+                                    placeholder="若有其他需求，請由此說明。"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="text-center mt-4">
+                            <button type="reset" class="btn btn-secondary me-2">清除重填</button>
+                            <button type="submit" class="btn btn-primary">送出需求</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div><!-- /.tab-content -->
+    </main>
+    <!-- ========== Modal：快閃店服務說明 ========== -->
+    <div class="modal fade" id="popupGuide" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title">
+                        <span class="me-2" style="font-size:1.3em;">🎉</span>
+                        快閃店服務項目
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <div class="mb-4">
+                        <h6 class="fw-bold text-primary">
+                            <span class="me-2" style="font-size:1.2em;">🎫</span>
+                            實體票券領取服務
+                        </h6>
+                        <p class="mb-2">
+                            請於 <strong class="text-danger">2025/7/24(四)</strong> 前完成以下步驟，以利於駐廠時領券：
+                        </p>
+                        <ol class="ps-4 text-secondary">
+                            <li>填寫並送出 <span class="fw-bold">線上需求表</span></li>
+                            <li>請主動來電或加入品味玩家官方LINE<span class="fw-bold">（@xtu2363c）</span>完成扣點作業</li>
+                        </ol>
+                        <p class="text-muted small">
+                            ※現場無受理臨時追加及變動餐券需求。<br>
+                            ※如點數不足需現場補現金，請自備剛好的現金額度，現場無法進行找零。<br>
+                            ※若未於指定日期前完成申請與扣點作業，恕無法如期於下個月駐廠時領取票券。
+                        </p>
+                    </div>
+
+                    <div>
+                        <h6 class="fw-bold text-warning">
+                            <span class="me-2" style="font-size:1.2em;">🔔</span>
+                            實體票券領取 代領須知
+                        </h6>
+                        <ul class="list-unstyled text-secondary">
+                            <li class="mb-2"><span class="me-2 text-info">▶️</span>需代領時，請於<span class="fw-bold">需求表備註填寫
+                                    代領者全名</span>，領票當天請出示代領者識別證查核。</li>
+                            <li class="mb-2"><span class="me-2 text-info">▶️</span>如無於申請表單備註代領者全名，現場不得代領。</li>
+                            <li class="mb-2"><span class="me-2 text-info">▶️</span>如無法提供識別證或身分證者，或與代領者資訊不符，恕無法領取。</li>
+                            <li><span class="me-2 text-info">▶️</span>如果是代領者，為避免爭議，恕無法現場補現金。</li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            關閉
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ===== FOOTER ===== -->
+    <footer aria-label="網站頁腳" id="rood_foot" class="layout01">
+        <img id="rood_foot_logo" src="assets/door_logo1.png" alt="品味玩家">
+        <p class="info"><span>客服專線：07‑386‑2488<br>服務時間：週一至週六 08:30‑20:00<br>訂房時間：週一至週五 08:30‑18:00；週六 08:30‑12:00</span>
+        </p>
+        <p class="cop"><span style="color:#A1A2A5;">2024 © 華倫旅行社 · 品味玩家 | 版權所有</span></p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script type="module" src="ticketjs/ticketRenderer.js" defer></script>
+    <script type="module" src="formjs/formAppMain.js"></script>
+
+</body>
+
+</html>
