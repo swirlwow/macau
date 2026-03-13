@@ -1,0 +1,996 @@
+<!doctype html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>澳門親子 3 天 2 夜｜旅遊手冊</title>
+  <style>
+    :root {
+      --bg: #fdfcfe;
+      --primary: #6366f1;
+      --day1: #0ea5e9;
+      --day2: #8b5cf6;
+      --day3: #f59e0b;
+      --food: #ec4899;
+      --bag: #ff7e5f;
+      --gallery: #06b6d4;
+      --text: #1e293b;
+      --muted: #64748b;
+      --radius: 28px;
+      --td-bg: #f8fafc;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
+      background: var(--bg);
+      background-image: radial-gradient(#e2e8f0 0.5px, transparent 0.5px);
+      background-size: 20px 20px;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .wrap { max-width: 900px; margin: 0 auto; padding: 20px; }
+
+    header {
+      background: linear-gradient(135deg, #fdf2f8 0%, #f0f9ff 25%, #fff7ed 50%, #faf5ff 75%, #f0fdf4 100%);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      padding: 50px 15px;
+      border-radius: 40px;
+      box-shadow: 0 15px 35px -10px rgba(99, 102, 241, 0.25);
+      margin-bottom: 25px;
+      text-align: center;
+      position: relative;
+      border: 8px solid #fff;
+      overflow: hidden;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header::before {
+      content: "✨☁️";
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      font-size: 24px;
+      opacity: 0.8;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    header::after {
+      content: "✨☁️";
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+      font-size: 24px;
+      opacity: 0.8;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 34px;
+      letter-spacing: 1px;
+      background: linear-gradient(to right, #6366f1, #ec4899, #f59e0b, #6366f1);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shine 5s linear infinite;
+      font-weight: 900;
+      filter: drop-shadow(2px 2px 0px rgba(255, 255, 255, 0.9));
+      white-space: nowrap;
+      display: inline-block;
+      max-width: 100%;
+      overflow: hidden;
+    }
+
+    @media (max-width: 480px) {
+      header h1 { font-size: 22px; }
+      header { padding: 40px 10px; }
+    }
+
+    @keyframes shine {
+      to { background-position: 200% center; }
+    }
+
+    .header-info {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    header p {
+      margin: 0;
+      color: #7c3aed;
+      font-size: 15px;
+      font-weight: 900;
+      background: #ffffff;
+      padding: 8px 20px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 15px rgba(124, 58, 237, 0.15);
+      border: 1px solid #fae8ff;
+    }
+
+    .tabs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+
+    @media (min-width: 600px) {
+      .tabs { grid-template-columns: repeat(6, 1fr); }
+    }
+
+    .tab {
+      background: #fff;
+      border: 3px solid #f1f5f9;
+      padding: 10px 4px;
+      border-radius: 20px;
+      text-align: center;
+      font-weight: 900;
+      cursor: pointer;
+      color: #64748b;
+      font-size: 13px;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0 6px 15px -5px rgba(0, 0, 0, 0.05);
+      user-select: none;
+      line-height: 1.4;
+    }
+
+    .tab span {
+      font-size: 18px;
+      display: inline-block;
+      margin-bottom: 2px;
+    }
+
+    .tab.active {
+      transform: scale(1.05);
+      color: #fff !important;
+      border-color: transparent !important;
+    }
+
+    .tab.active[data-tab="day1"] { background: var(--day1); box-shadow: 0 10px 20px -5px rgba(14, 165, 233, 0.4); }
+    .tab.active[data-tab="day2"] { background: var(--day2); box-shadow: 0 10px 20px -5px rgba(139, 92, 246, 0.4); }
+    .tab.active[data-tab="day3"] { background: var(--day3); box-shadow: 0 10px 20px -5px rgba(245, 158, 11, 0.4); }
+    .tab.active[data-tab="food"] { background: var(--food); box-shadow: 0 10px 20px -5px rgba(236, 72, 153, 0.4); }
+    .tab.active[data-tab="bag"] { background: var(--bag); box-shadow: 0 10px 20px -5px rgba(255, 126, 95, 0.4); }
+    .tab.active[data-tab="gallery"] { background: var(--gallery); box-shadow: 0 10px 20px -5px rgba(6, 182, 212, 0.4); }
+
+    .card {
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      display: none;
+      border: 2px solid #fff;
+    }
+
+    .card.active {
+      display: block;
+      animation: slideIn 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(20px) scale(0.98); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .card-hd {
+      padding: 18px;
+      color: white;
+      font-weight: 900;
+      text-align: center;
+      font-size: 19px;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .bg-day1 { background: linear-gradient(90deg, #0ea5e9, #38bdf8); }
+    .bg-day2 { background: linear-gradient(90deg, #8b5cf6, #a78bfa); }
+    .bg-day3 { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
+    .bg-food { background: linear-gradient(90deg, #ec4899, #f472b6); }
+    .bg-bag { background: linear-gradient(90deg, #ff7e5f, #feb47b); }
+    .bg-gallery { background: linear-gradient(90deg, #06b6d4, #22d3ee); }
+
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0 8px;
+      padding: 10px;
+      background: #f1f5f9;
+    }
+
+    td {
+      padding: 16px 18px;
+      vertical-align: top;
+      border: none;
+    }
+
+    .time {
+      font-weight: 900;
+      color: var(--primary);
+      white-space: nowrap;
+      width: 95px;
+      text-align: center;
+      vertical-align: middle;
+      background: #ffffff;
+      border-radius: 16px 0 0 16px;
+      border-right: 2px dashed #f1f5f9;
+    }
+
+    .content-td {
+      background: var(--td-bg);
+      border-radius: 0 16px 16px 0;
+      box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+
+    .hl { color: #f43f5e; font-weight: 900; }
+
+    .note {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 3px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+      margin-right: 6px;
+      background: #ffffff;
+      color: #475569;
+      margin-top: 6px;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .pill.purple { background: #f5f3ff; color: #6d28d9; }
+    .pill.blue { background: #eff6ff; color: #1d4ed8; }
+    .pill.pink { background: #fff1f2; color: #be123c; }
+    .pill.orange { background: #fff7ed; color: #c2410c; }
+    .pill.green { background: #ecfdf5; color: #047857; }
+
+    .food-item,
+    .bag-item,
+    .img-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      padding: 16px;
+      border-bottom: 2px dashed #f1f5f9;
+      background: #fcfdfe;
+      border-radius: 16px;
+      margin-bottom: 8px;
+    }
+
+    .food-icon,
+    .bag-icon {
+      font-size: 26px;
+      line-height: 1;
+      margin-top: 2px;
+    }
+
+    .food-info b,
+    .bag-info b,
+    .img-info b {
+      display: block;
+      font-size: 16px;
+      color: var(--text);
+    }
+
+    .bag-info b { color: var(--bag); }
+    .img-info b { color: var(--gallery); }
+
+    .food-info span,
+    .bag-info span,
+    .img-info span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .img-box {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: #ffffff;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #94a3b8;
+      border: 3px dashed #e2e8f0;
+      margin-top: 12px;
+      font-size: 14px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      overflow: hidden;
+    }
+
+    .img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .btn-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    @media (min-width: 600px) {
+      .btn-row { grid-template-columns: 1fr 1fr; }
+    }
+
+    .btn-copy,
+    .btn-print {
+      border: none;
+      padding: 16px;
+      border-radius: 18px;
+      width: 100%;
+      font-weight: 900;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .btn-copy {
+      background: #1e293b;
+      color: white;
+    }
+
+    .btn-print {
+      background: #ffffff;
+      color: #1e293b;
+      border: 3px solid #f1f5f9;
+    }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 25px;
+      transform: translateX(-50%);
+      background: #0f172a;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-weight: 900;
+      opacity: 0;
+      transition: 0.3s;
+      z-index: 9999;
+      pointer-events: none;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(-10px);
+    }
+
+    @media print {
+      .tabs, .btn-row, .toast { display: none !important; }
+      .card {
+        display: block !important;
+        margin-bottom: 25px;
+        box-shadow: none;
+        border: 1px solid #eee;
+      }
+      body { background: white; }
+      table { background: transparent; }
+      .content-td {
+        background: white;
+        border: 1px solid #eee;
+      }
+      header {
+        background: #fdfcfe;
+        border: 2px solid #eee;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <h1>澳門親子 3 天 2 夜 ✈️</h1>
+      <div class="header-info">
+        <p><span>📅</span> 2026/03/29 – 03/31</p>
+        <p><span>🏨</span> 住宿：澳門百老匯酒店</p>
+      </div>
+    </header>
+
+    <nav class="tabs" aria-label="分頁導覽">
+      <div class="tab active" data-tab="day1"><span>☀️</span><br>Day 1</div>
+      <div class="tab" data-tab="day2"><span>🎡</span><br>Day 2</div>
+      <div class="tab" data-tab="day3"><span>✈️</span><br>Day 3</div>
+      <div class="tab" data-tab="food"><span>🍦</span><br>必吃必買</div>
+      <div class="tab" data-tab="bag"><span>🎒</span><br>行李清單</div>
+      <div class="tab" data-tab="gallery"><span>📸</span><br>圖集備忘</div>
+    </nav>
+
+    <div class="card active" id="day1">
+      <div class="card-hd bg-day1">Day 1：團體-澳門歷史城區巡禮（美食手信首站）</div>
+      <table>
+        <tr>
+          <td class="time">集合</td>
+          <td class="content-td">
+            <b>⏰ 3/29 上午 5:30 集合</b><br>
+            <span class="note">高雄小港國際機場集合，請務必準時，先完成報到後再準備登機與托運行李。</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="time">飛行</td>
+          <td class="content-td">
+            <b>✈️ 國泰航空 CX449（高雄→香港）</b><br>
+            <span class="hl">起飛 07:45 ｜ 抵達 09:20</span><br>
+            <span class="note">落地後接續轉往澳門展開第一天團體行程，早餐為機上簡餐。</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="time">上午</td>
+          <td class="content-td">
+            <b>🏛 大三巴牌坊｜⛪ 玫瑰堂｜🏛 議事亭前地｜🏢 民政總署大樓</b><br>
+            <span class="pill blue">世界遺產散步線</span>
+            <span class="pill">澳門經典地標</span>
+            <div class="note">
+              這一段是澳門歷史城區最經典的路線，會經過澳門最具代表性的葡式廣場、教堂與歷史建築。<br>
+              人潮通常較多，建議拍照以「快速拍、跟隊移動」為主，雙胞胎若走累可輪流抱抱或推車代步。
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="time">上午</td>
+          <td class="content-td">
+            <b>☕ 世記咖啡（大三巴／老城區順路加吃）</b><br>
+            <span class="pill orange">自由加吃推薦</span>
+            <span class="pill">厚蛋多士 / 豬扒包</span>
+            <div class="note">
+              世記咖啡很適合放在 Day1 老城區巡禮中，作為「看到有空檔就順路吃」的小加碼。
+              推薦厚蛋多士、豬扒包、奶茶或炭燒咖啡，屬於很有澳門老店感的代表性早餐／加餐。<br>
+              建議心態以「有時間就吃、沒時間就不硬排」最輕鬆。
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="time">上午</td>
+          <td class="content-td">
+            <b>💕 戀愛巷｜🏘 關前街｜🛍 關前街文創商圈</b><br>
+            <span class="pill green">文創散步</span>
+            <span class="pill pink">拍照好看</span>
+            <div class="note">
+              戀愛巷彩色牆面很適合拍親子照，關前街則比較有新舊交融的街區感，沿線可留意特色小店與文創選物。<br>
+              關前後街附近也較適合安排小點或甜品停留。
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="time">午餐</td>
+          <td class="content-td">
+            <b>🍽 粵菜料理 HKD 80 / 人</b><br>
+            <span class="pill green">團體餐</span>
+            <span class="note">份量適中，建議不要吃太撐，下午還有行程與拍照點。</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="time">下午</td>
+          <td class="content-td">
+            <b>🥛 義順牛奶公司（關前後街附近順路甜點）</b><br>
+            <span class="pill pink">自由加吃推薦</span>
+            <span class="pill">雙皮燉奶 / 薑汁撞奶</span>
+            <div class="note">
+              義順牛奶公司可安排在關前後街附近作為順路甜點站，很適合大人小孩一起分食。<br>
+              若當天天氣熱或走累了，來一份雙皮燉奶、燉鮮奶或薑汁撞奶，會很有「澳門甜品巡禮」的感覺。<br>
+              建議以「1～2 份分食」最剛好，不一定每人一份，這樣後續還能保留肚子吃正餐或手信小點。
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="time">下午</td>
+          <td class="content-td">
+            <b>🏮 福隆新街｜🪟 紅窗門街｜🌉 雙湖塔影｜🗼 遠眺澳門旅遊塔｜🌁 外觀港珠澳大橋</b><br>
+            <span class="pill orange">老街氛圍</span>
+            <span class="pill blue">拍照景點</span>
+            <div class="note">
+              下午偏向街景與城市風貌欣賞，會走到較具澳門味道的老街區，也會安排遠眺旅遊塔與港珠澳大橋外觀。<br>
+              若孩子開始累了，這段建議以「跟上團體、抓重點拍照」為主，不必每個點都停太久。
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="time">晚餐</td>
+          <td class="content-td">
+            <b>🐘 小飛象葡國料理 HKD 130 / 人</b><br>
+            <span class="pill purple">葡式風味</span>
+            <span class="note">
+              葡國菜口味較濃，建議幫小孩準備較清淡或容易分食的餐點，例如白飯、蛋類或較溫和的主菜。<br>
+              若想吃得更舒服，也可優先夾取較溫和的燉菜、烤雞、炒飯類型。
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td class="time">晚間</td>
+          <td class="content-td">
+            <b>🎭 2026 水舞間（以實際訂到席位日期為準）</b><br>
+            <span class="pill blue">旅程亮點</span>
+            <span class="pill pink">震撼秀場</span>
+            <div class="note">
+              依旅行社說明，若本團安排在第一天觀賞，地點為新濠天地水舞間劇院。景觀席由系統自動安排，無法自行選位。<br>
+              依注意事項：大小同價、每人一票、不分年齡；<span class="hl">未滿 6 歲以下不建議觀賞</span>。若小朋友情緒或體力不穩，建議以現場狀況彈性評估。
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="card" id="day2">
+      <div class="card-hd bg-day2">Day 2：自由行｜高空景致、玩水放電、午餐地點二選一、璀璨夜景</div>
+      <table>
+        <tr>
+          <td class="time">09:30</td>
+          <td class="content-td">
+            <b>🗼 澳門旅遊塔</b><br>
+            <span class="pill blue">高空絕景</span>
+            <span class="pill pink">KKday：門票成人 $517</span>
+            <div class="note">
+              早上精神最好，先安排觀景塔最剛好。這一站以觀景、看海景、拍高空風景照為主，不建議再加太多刺激型設施，避免影響後面行程體力。<br>
+              若只是親子輕鬆行，觀景層就很足夠。
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="time">11:00</td>
+          <td class="content-td">
+            <b>🚋 媽閣站：跨海輕軌體驗</b><br>
+            <span class="pill purple">景觀交通</span>
+            <div class="note">
+              旅遊塔結束後可前往媽閣站搭乘跨海輕軌，這一段屬於澳門自由行裡很輕鬆、又能看風景的交通體驗。<br>
+              建議坐在<span class="hl">行進方向右側靠窗</span>，橋景與海景視野最好，孩子也會比較有新鮮感。
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="time">12:30</td>
+          <td class="content-td">
+            <b>🍽 中午用餐：官也街 vs 百老匯美食街（兩案評估）</b><br>
+            <span class="pill green">官也街：在地街區感</span>
+            <span class="pill purple">百老匯：親子動線更穩</span>
+            <div class="note">
+              <b>方案 A｜官也街：</b>
+              適合想體驗澳門氹仔舊城區氣氛、邊走邊逛邊吃的安排。官也街一帶餐飲與手信店集中，
+              比較有旅遊感，也容易順便買些小吃或伴手禮。但中午人潮通常比較多，步行與排隊時間也可能較長，
+              對 4 歲雙胞胎來說，節奏會比較看當天狀況。<br><br>
+
+              <b>適合小孩的餐點方向（官也街）：</b><br>
+              ・茶餐廳類：通粉、烘蛋、奶油多士、熱奶茶／凍奶茶（大人）<br>
+              ・粥麵類：雲吞麵、魚蛋粉、粥品<br>
+              ・甜點類：燉奶、蛋塔、簡單糖水<br>
+              ・小吃類：豬扒包、雞翼、魚丸，但較適合分食，不建議全靠小吃當正餐
+              <br><br>
+
+              <b>方案 B｜百老匯美食街：</b>
+              若以「吃完要回飯店午休、下午還要玩水」來看，百老匯會更順。餐飲集中、選擇多，
+              吃完走回百老匯酒店或接銀河動線都很方便，整體對親子更友善。<br><br>
+
+              <b>適合小孩的餐點方向（百老匯美食街）：</b><br>
+              ・港點類：蒸餃、腸粉、叉燒包、燒賣<br>
+              ・粥麵類：雲吞麵、艇仔粥、叉燒飯、燒味飯<br>
+              ・茶餐廳類：滑蛋飯、通粉、三文治、焗飯<br>
+              ・甜點類：燉奶、蛋塔、豆花、凍飲（大人）
+              <br><br>
+
+              <b>推薦結論：</b>
+              若你們當天重視「省體力、吃完好休息、下午玩水順」，建議優先選 <span class="hl">百老匯美食街</span>；
+              若更想感受街區氛圍、順便逛官也街，才改走 <span class="hl">官也街</span>。
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="time">13:45</td>
+          <td class="content-td">
+            <b>🏨 回房午休 / 整理一下</b><br>
+            <span class="pill orange">關鍵充電時段</span>
+            <div class="note">
+              這段休息非常重要。若中午在官也街用餐，回房時間可能會稍晚；若在百老匯吃，回房節奏通常會更順。<br>
+              孩子有補眠，下午玩水與晚上夜景都會更穩定。
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="time">15:00</td>
+          <td class="content-td">
+            <b>🌊 銀河「天浪淘園」水樂園</b><br>
+            <span class="pill blue">住客免費</span>
+            <span class="pill green">親子放電</span>
+            <div class="note">
+              下午安排玩水最適合雙胞胎放電，也比較符合住在百老匯酒店的動線。<br>
+              <span class="hl">親子回百老匯房洗澡最順</span>，玩完可先整理、換乾衣，再接續晚餐與夜景行程。<br>
+              若孩子玩得太累，這裡就是 Day2 最重要的體力分界點，建議控制停留時間，不必玩到完全沒電。
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="time">18:30</td>
+          <td class="content-td">
+            <b>🍽 晚餐：威尼斯人購物中心</b><br>
+            <span class="pill purple">推薦：北方館 / 何洪記</span>
+            <div class="note">
+              晚餐放在威尼斯人很順路，也較容易找到適合孩子的麵食、粥品或可分食的主餐。<br>
+              如果雙胞胎已經很累，建議優先選出餐快、口味穩定的餐廳，不要再另外繞路找名店。
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="time">19:15</td>
+          <td class="content-td">
+            <b>✨ 倫敦人光效匯演</b><br>
+            <span class="pill purple">震撼視覺</span>
+            <div class="note">
+              晚餐後慢慢散步到倫敦人，外牆燈光與英倫風建築很有節慶感。這裡建議用「拍到就好」的方式，不必久站等整點。
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="time">20:00</td>
+          <td class="content-td">
+            <b>🗼 巴黎人鐵塔夜景</b><br>
+            <span class="pill blue">浪漫燈光</span>
+            <div class="note">
+              就在倫敦人附近，步行銜接非常順。建議以外圍拍照為主，不一定要登塔，這樣最省體力也最適合親子夜遊。
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="card" id="day3">
+      <div class="card-hd bg-day3">Day 3：團體-路環漁韻（安德魯本店）＋返程</div>
+      <table>
+        <tr>
+          <td class="time">早餐</td>
+          <td class="content-td">
+            <b>🍳 酒店內用早餐</b><br>
+            <span class="note">第三天建議不要拖太晚，吃飽後依集合時間出發。</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="time">上午</td>
+          <td class="content-td">
+            <b>🎣 路環漁韻｜⛪ 路環聖方濟各聖堂</b><br>
+            <span class="pill pink">必買：安德魯蛋塔本店</span>
+            <div class="note">
+              路環一帶比較有海邊小鎮感，步調也比前兩天更悠閒。這一段團體行程本身就很有澳門在地味，教堂、村落、海岸線都很適合拍家庭照。<br>
+              若有空檔，很適合順路買安德魯蛋塔本店作為這趟旅程的經典收尾。
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="time">中午</td>
+          <td class="content-td">
+            <b>🍽 陳勝記餐廳 HKD 160 / 人</b><br>
+            <span class="note">第三天團體餐標較高，建議把握坐下來好好吃一餐、補充體力。</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="time">下午</td>
+          <td class="content-td">
+            <b>🌊 龍爪觀濤</b><br>
+            <span class="pill blue">海景收尾</span>
+            <span class="pill orange">注意風大</span>
+            <div class="note">
+              海風通常較強，幫小孩加薄外套會比較安心。這一站以看海、拍照、短暫停留為主，不建議久站吹風。
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="time">下午</td>
+          <td class="content-td">
+            <b>🌁 經港珠澳大橋前往香港機場</b><br>
+            <span class="pill purple">跨海返程</span>
+            <div class="note">
+              團體行程說明中，返程將經港珠澳大橋前往香港機場。這也是本趟澳門行程最後一段具代表性的跨海移動體驗。
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="time">返程</td>
+          <td class="content-td">
+            <b>✈️ 國泰航空 CX448（香港→高雄）</b><br>
+            <span class="hl">起飛 21:40 ｜ 抵達 23:10</span><br>
+            <span class="note">晚餐為機上簡餐，結束三天兩夜澳門行程。</span>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="card" id="food">
+      <div class="card-hd bg-food">🍴 澳門必吃必買（最強攻略）</div>
+      <div style="padding: 10px;">
+
+        <div class="food-item">
+          <div class="food-icon">☕</div>
+          <div class="food-info">
+            <b>世記咖啡（Day1 老城區順路加吃）</b>
+            <span>
+              推薦：厚蛋多士、豬扒包、奶茶、炭燒咖啡。<br>
+              適合放在 Day1 老城區巡禮中，當作「看到空檔就加吃」的澳門老店體驗。
+            </span>
+          </div>
+        </div>
+
+        <div class="food-item">
+          <div class="food-icon">🥛</div>
+          <div class="food-info">
+            <b>義順牛奶公司（關前後街附近）</b>
+            <span>
+              推薦：雙皮燉奶、薑汁撞奶、燉鮮奶。<br>
+              比較適合 1～2 份分食，不一定每人一碗，保留肚子給後續正餐會更剛好。
+            </span>
+          </div>
+        </div>
+
+        <div class="food-item">
+          <div class="food-icon">🏮</div>
+          <div class="food-info">
+            <b>官也街（氹仔舊城區吃逛型）</b>
+            <span>
+              適合想增加街區感、邊吃邊逛的安排。比較推薦吃茶餐廳、粥麵、豬扒包、燉奶類，
+              不太建議全靠散食當正餐，因為帶小孩時容易吃得零碎又不夠飽。
+            </span>
+          </div>
+        </div>
+
+        <div class="food-item">
+          <div class="food-icon">🍜</div>
+          <div class="food-info">
+            <b>百老匯美食街（親子動線首選）</b>
+            <span>
+              若要兼顧中午吃飯、午休、下午玩水，百老匯的整體節奏最穩。
+              建議優先找：港點、粥品、燒味飯、滑蛋飯、腸粉這類孩子接受度高的餐點。
+            </span>
+          </div>
+        </div>
+
+        <div class="food-item">
+          <div class="food-icon">🥟</div>
+          <div class="food-info">
+            <b>威尼斯人晚餐（穩定親子選擇）</b>
+            <span>
+              推薦方向：北方館、何洪記，或同類型的麵食 / 粥品 / 港式餐廳。<br>
+              理由是出餐相對穩、可分食、孩子接受度高，吃完接倫敦人與巴黎人夜景也很順。
+            </span>
+          </div>
+        </div>
+
+        <div class="food-item">
+          <div class="food-icon">🥧</div>
+          <div class="food-info">
+            <b>安德魯蛋塔本店（路環）</b>
+            <span>
+              如果 Day3 路環行程有空檔，這是最值得列入的經典甜點收尾站之一。<br>
+              建議現吃 1～2 顆，其餘再視返程時間決定是否外帶。
+            </span>
+          </div>
+        </div>
+
+        <div class="food-item">
+          <div class="food-icon">🛍️</div>
+          <div class="food-info">
+            <b>必買手信店在哪裡？</b>
+            <span>
+              <b>① 大三巴／議事亭前地周邊：</b> 最方便買手信的核心區，常見有鉅記、英記等連鎖手信店，適合集中買杏仁餅、鳳凰卷、肉乾。<br>
+              <b>② 官也街：</b> 若 Day2 中午走官也街，也可順手補買一部分手信，但人潮通常較多。<br>
+              <b>③ 路環：</b> 以安德魯蛋塔本店、海邊小店或較有在地感的小物為主，不一定是最大量買手信的地方。<br>
+              <b>④ 最香餅家：</b> 若你們真的想買炭燒杏仁餅，可列為特別目標，但排隊時間不一定，建議視當天人潮彈性安排。
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="card" id="bag">
+      <div class="card-hd bg-bag">🎒 行李清單（家庭客製完整版）</div>
+      <div style="padding: 10px;">
+
+        <div class="bag-item">
+          <div class="bag-icon">📄</div>
+          <div class="bag-info">
+            <b>證件 / 文件（務必先拍照備份）</b>
+            <span>
+              護照、通行證/台胞證、機票/團體資料、住宿資訊、保險資料。<br>
+              建議手機與雲端都留一份，萬一紙本臨時找不到，也不至於手忙腳亂。
+            </span>
+          </div>
+        </div>
+
+        <div class="bag-item">
+          <div class="bag-icon">👧👦</div>
+          <div class="bag-info">
+            <b>雙胞胎用品</b>
+            <span>
+              推車（強烈建議）、薄外套（商場冷氣強）、替換衣物、濕紙巾、小零食、小玩具。<br>
+              若 Day2 要玩水，建議加上泳裝、毛巾、防水袋、簡單換洗衣物，會更完整。
+            </span>
+          </div>
+        </div>
+
+        <div class="bag-item">
+          <div class="bag-icon">👂</div>
+          <div class="bag-info">
+            <b>子逸（聽覺 / 耳朵相關）</b>
+            <span>
+              助聽器/配件、備用電池、防水收納盒、簡易清潔用品。<br>
+              盡量避免長時間高噪音久待，若有玩水行程，耳朵相關用品務必獨立收納。
+            </span>
+          </div>
+        </div>
+
+        <div class="bag-item">
+          <div class="bag-icon">🧘‍♀️</div>
+          <div class="bag-info">
+            <b>媽媽（第二型糖尿病）</b>
+            <span>
+              藥物、血糖機、低血糖備用糖、補水用品。<br>
+              行程記得「不要空腹」＋「不要一次吃太甜」，若當天走動量大，建議固定補水與分次進食。
+            </span>
+          </div>
+        </div>
+
+        <div class="bag-item">
+          <div class="bag-icon">🔌</div>
+          <div class="bag-info">
+            <b>電器 / 充電</b>
+            <span>
+              萬用轉接頭、行動電源、充電線（手機/平板/相機）。<br>
+              一家人拍照量大，建議行動電源至少帶 1～2 顆，晚上回房再統一充電。
+            </span>
+          </div>
+        </div>
+
+        <div class="bag-item">
+          <div class="bag-icon">💊</div>
+          <div class="bag-info">
+            <b>常備藥 / 小物</b>
+            <span>
+              退燒藥、OK 繃、腸胃藥、防曬、防蚊、口罩（人潮多備用）。<br>
+              若孩子容易暈車、怕熱或容易磨腳，也可事先準備相關用品。
+            </span>
+          </div>
+        </div>
+
+        <div class="bag-item">
+          <div class="bag-icon">💰</div>
+          <div class="bag-info">
+            <b>金流</b>
+            <span>
+              少量現金（小吃 / 零星）、信用卡；收據集中放一個夾鏈袋，回來好記帳。<br>
+              若要買手信、蛋塔、小食，留一點零錢和小額紙鈔通常更方便。
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="card" id="gallery">
+      <div class="card-hd bg-gallery">📸 圖集備忘（行程視覺版）</div>
+      <div style="padding: 10px;">
+
+        <div class="img-card">
+          <div style="min-width: 26px;">🚋</div>
+          <div class="img-info" style="width:100%;">
+            <b>Day 2 輕軌跨海段</b>
+            <span>
+              從媽閣站搭輕軌時，建議優先選右側靠窗，橋景與海景視野最好，也很適合讓孩子休息一下、邊坐邊看風景。
+            </span>
+            <div class="img-box"><span>（可放輕軌路線圖 / 你自己的截圖）</span></div>
+          </div>
+        </div>
+
+        <div class="img-card">
+          <div style="min-width: 26px;">🌊</div>
+          <div class="img-info" style="width:100%;">
+            <b>Day 3 路環漁韻</b>
+            <span>
+              路環漁村是澳門很有在地感的角落，海邊、低矮建築與漁村氣氛都很適合當作旅程最後一天的拍照收尾。
+            </span>
+            <div class="img-box"><span>（建議放你拍的路環漁韻照片）</span></div>
+          </div>
+        </div>
+
+        <div class="img-card">
+          <div style="min-width: 26px;">⛪</div>
+          <div class="img-info" style="width:100%;">
+            <b>Day 3 路環聖方濟各聖堂</b>
+            <span>
+              教堂本身色彩柔和、外觀很有南歐小鎮感，若要拍全家照，這裡會比人潮很多的老城區更從容。
+            </span>
+            <div class="img-box"><span>（建議放聖方濟各聖堂照片）</span></div>
+          </div>
+        </div>
+
+        <div class="img-card">
+          <div style="min-width: 26px;">🌅</div>
+          <div class="img-info" style="width:100%;">
+            <b>Day 3 龍爪觀濤</b>
+            <span>
+              龍爪觀濤比較適合作為短停的海景點，看海、拍照、感受風景即可，不建議久站。若天氣好，照片會很有澳門海岸線的味道。
+            </span>
+            <div class="img-box"><span>（建議放龍爪觀濤 / 海岸線照片）</span></div>
+          </div>
+        </div>
+
+        <div class="img-card">
+          <div style="min-width: 26px;">🎭</div>
+          <div class="img-info" style="width:100%;">
+            <b>水舞間備忘</b>
+            <span>
+              若安排在第一天晚間，可視孩子體力決定是否全程觀賞；這類秀場體驗感很強，但對小小孩來說也比較耗神。
+            </span>
+            <div class="img-box"><span>（可放水舞間票券 / 官方照）</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn-copy" id="btnCopy">📋 複製內容</button>
+      <button class="btn-print" id="btnPrint">🖨️ 列印旅遊手冊</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">已複製 ✅</div>
+
+  <script>
+    const tabs = document.querySelectorAll('.tab');
+    const cards = document.querySelectorAll('.card');
+    const btnCopy = document.getElementById('btnCopy');
+    const btnPrint = document.getElementById('btnPrint');
+    const toast = document.getElementById('toast');
+
+    function setActive(tabId) {
+      tabs.forEach(t => t.classList.toggle('active', t.dataset.tab === tabId));
+      cards.forEach(c => c.classList.toggle('active', c.id === tabId));
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    tabs.forEach(tab => tab.addEventListener('click', () => setActive(tab.dataset.tab)));
+
+    btnCopy.addEventListener('click', async () => {
+      const activeCard = document.querySelector('.card.active');
+      if (!activeCard) return;
+      await navigator.clipboard.writeText(activeCard.innerText);
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 1500);
+    });
+
+    btnPrint.addEventListener('click', () => window.print());
+  </script>
+</body>
+
+</html>
